@@ -1,10 +1,10 @@
-import { Notes } from './components';
+import { UserNotes } from './components/UserNotes.tsx';
 import { NotesProvider } from './contexts';
 
-export const NotesPage = () => {
+export const Notes = () => {
   return (
     <NotesProvider>
-      <Notes />
+      <UserNotes />
     </NotesProvider>
   );
 };

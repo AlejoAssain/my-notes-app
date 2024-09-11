@@ -3,7 +3,6 @@ export * from './EditNoteForm';
 export * from './NewNoteForm';
 export * from './Note';
 export * from './NoteCategories';
-export * from './Notes';
 export * from './NoteState';
 export * from './StatusFilterSelection';
 export * from './styled-components/containers';

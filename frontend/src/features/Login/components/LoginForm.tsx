@@ -1,7 +1,7 @@
-import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
+import { FormikHelpers } from 'formik';
 import * as Yup from 'yup';
+import { Form, FormTextField } from '../../../components/Form';
 
-import { LoginFormFieldContainer } from './styled-components';
 import { useSession } from '../../../contexts';
 import { Button } from '../../../components/Button';
 
@@ -33,24 +33,15 @@ export const LoginForm = () => {
     actions.resetForm();
   };
   return (
-    <Formik
+    <Form
+      title='Login!'
       initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={handleSubmit}
+      yupValidationSchema={validationSchema}
+      handleSubmit={handleSubmit}
     >
-      <Form>
-        <LoginFormFieldContainer>
-          <label htmlFor="username">Username</label>
-          <Field type="text" id="username" name="username" />
-          <ErrorMessage name="username" component="div" />
-        </LoginFormFieldContainer>
-        <LoginFormFieldContainer>
-          <label htmlFor="password">Password</label>
-          <Field type="password" id="password" name="password" />
-          <ErrorMessage name="password" component="div" />
-        </LoginFormFieldContainer>
-        <Button type='submit'>Log in</Button>
-      </Form>
-    </Formik>
+      <FormTextField label='Username:' fieldName='username' fontSize='normal'/>
+      <FormTextField label='Password:' fieldName='password' type='password' fontSize='normal'/>
+      <Button type="submit">Log in</Button>
+    </Form>
   );
 };

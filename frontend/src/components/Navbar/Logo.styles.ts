@@ -7,4 +7,5 @@ export const LogoContainer = styled.div`
   justify-content: center;
   font-size: 20px;
   font-weight: bolder;
+  cursor: pointer;
 `

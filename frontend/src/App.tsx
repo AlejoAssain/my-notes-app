@@ -3,13 +3,12 @@ import { ThemeProvider } from 'styled-components';
 
 import './App.css';
 import { defaultTheme } from './themes';
-import { NotesPage } from './pages/Notes';
-import { LoginPage } from './pages/Login';
+import { NotesPage, LoginPage } from './pages';
 import { useSession } from './contexts';
 import { Loading, Navbar } from './components';
 
 // TODO - create reusable form components
-// TODO - pass logic from 'pages' to 'features'
+// TODO - pass create and edit note form to reusable form
 function App() {
   const { session, loading } = useSession();
 

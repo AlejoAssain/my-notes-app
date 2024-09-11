@@ -1,4 +1,5 @@
-import {ErrorMessage, Field} from 'formik';
+import { ErrorMessage, Field } from 'formik';
+import { FormTextFieldContainer } from './Form/FormTextField.styles.ts';
 
 
 type Props = {
@@ -8,10 +9,10 @@ type Props = {
 
 export const TextFormField = (props: Props) => {
   return (
-    <div>
+    <FormTextFieldContainer>
       <label>{props.label}</label>
-      <Field name={props.fieldName} />
+      <Field name={props.fieldName}/>
       <ErrorMessage name={props.fieldName} />
-    </div>
+    </FormTextFieldContainer>
   )
 }

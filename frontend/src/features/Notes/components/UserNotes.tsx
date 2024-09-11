@@ -11,7 +11,7 @@ import { ControlButtonsContainer, FiltersContainer, NotesWrapper } from './style
 
 export type NoteStatusFilter = 'all' | 'active' | 'archived';
 
-export const Notes = () => {
+export const UserNotes = () => {
   const { notes, loading } = useNotes();
   const [statusFilter, setStatusFilter] = useState<NoteStatusFilter>('all');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');

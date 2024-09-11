@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const LoginPageWrapper = styled.div`
+export const LoginWrapper = styled.div`
   margin-top: 100px;
   display: flex;
   flex-direction: column;
