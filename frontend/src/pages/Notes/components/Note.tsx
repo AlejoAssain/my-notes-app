@@ -1,14 +1,12 @@
 import { useState } from 'react';
 
-import { NoteModel } from '#models/index.ts';
-import { EditButton } from '#components/index.ts';
-import {
-  NoteContainer,
-  NoteHeaderContainer,
-} from '#notes/components/styled-components/index.ts';
-import { NoteState } from '#notes/components/index.ts';
-import { EditNoteForm } from '#notes/components/EditNoteForm.tsx';
-import { NoteCategories } from './NoteCategories';
+import { Button } from '../../../components/Button';
+import { EditIcon } from '../../../components/Icons';
+import { NoteModel } from '../../../models';
+import { EditNoteForm } from './EditNoteForm.tsx';
+import { NoteCategories } from './NoteCategories.tsx';
+import { NoteState } from './NoteState.tsx';
+import { NoteContainer, NoteHeaderContainer } from './styled-components';
 
 type Props = {
   note: NoteModel;
@@ -27,7 +25,9 @@ export const Note = ({ note }: Props) => {
         <>
           <NoteHeaderContainer>
             <h4>{note.content}</h4>
-            <EditButton toggleEdit={toggleEdit} />
+            <Button onClick={() => toggleEdit()}>
+              <EditIcon />
+            </Button>
           </NoteHeaderContainer>
           <NoteCategories categories={note.categories} />
           <NoteState active={note.active} />

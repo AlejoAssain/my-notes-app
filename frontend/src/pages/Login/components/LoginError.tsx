@@ -1,5 +1,4 @@
-import { useSession } from '#contexts/SessionContext.js';
-
+import { useSession } from '../../../contexts';
 import { LoginErrorContainer } from './styled-components';
 
 export const LoginError = () => {

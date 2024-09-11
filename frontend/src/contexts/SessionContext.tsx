@@ -8,8 +8,9 @@ import {
 import Cookies from 'js-cookie';
 import axios from 'axios';
 
-import { SessionModel } from '#models/session.model.js';
-import { getCurrentUser, login } from '#services/auth.service.js';
+import { SessionModel } from '../models';
+import { getCurrentUser, login } from '../services/auth.service.ts';
+
 
 interface SessionProviderProps {
   children: ReactNode;
@@ -43,7 +44,7 @@ export const SessionProvider = ({ children }: SessionProviderProps) => {
       if (e.response) {
         setError(e.response?.data.message);
       } else {
-        setError('Unknown error ocurred!');
+        setError('Unknown error occurred!');
       }
     } else {
       setError(e instanceof Error ? e.message : 'Unknown error occurred!');
@@ -51,8 +52,9 @@ export const SessionProvider = ({ children }: SessionProviderProps) => {
   };
 
   const loginUser = async (username: string, password: string) => {
+    setLoading(true);
+
     try {
-      setLoading(true);
       const newSession = await login(username, password);
       setSession(newSession);
       setTokenCookie(newSession.token);
@@ -69,21 +71,24 @@ export const SessionProvider = ({ children }: SessionProviderProps) => {
     setError(null)
   };
 
-  const getSessionFromCookie = () => {
+  const getSessionFromCookie = async () => {
+    setLoading(true);
     const token = Cookies.get('token');
+
     if (token) {
-      getCurrentUser(token)
-        .then((user) => {
-          setSession({
-            token: token,
-            user: user,
-          });
-        })
-        .catch((err) => {
-          setError(err);
-          setSession(null);
+      try {
+        const user = await getCurrentUser(token)
+        setSession({
+          token: token,
+          user: user,
         });
+      } catch (e) {
+        setErrorMessage(e);
+        setSession(null);
+      }
     }
+
+    setLoading(false);
   };
 
   useEffect(() => {

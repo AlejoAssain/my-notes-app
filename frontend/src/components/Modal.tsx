@@ -1,4 +1,5 @@
-import { ModalButton, ModalContainer, ModalWrapper } from './styled-components';
+import { Button } from './Button';
+import { ModalContainer, ModalWrapper } from './styled-components';
 
 type Props = {
   isOpen: boolean;
@@ -10,13 +11,9 @@ export const Modal = ({ isOpen, close, children }: Props) => {
   return !isOpen ? null : (
     <ModalContainer>
       <ModalWrapper>
-        <ModalButton
-          onClick={close}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <Button color='warning' onClick={() => close()}>
           &times;
-        </ModalButton>
+        </Button>
         {children}
       </ModalWrapper>
     </ModalContainer>

@@ -11,3 +11,5 @@ export const defaultTheme = {
     lighterBackground: '#444'
   }
 }
+
+export type ThemeColor = keyof typeof defaultTheme.colors;

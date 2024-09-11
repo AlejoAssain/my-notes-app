@@ -6,16 +6,10 @@ import {
   useState,
 } from 'react';
 
-import { NoteModel } from '#models/index.ts';
-import {
-  getNotesData,
-  createNote,
-  updateNote,
-  deleteNote,
-  getCategoriesData,
-} from '#notes/services/notes.service.ts';
-import { delayUtil } from '#utilities/index.ts';
-import { useSession } from '#contexts/SessionContext.tsx';
+import { useSession } from '../../../contexts';
+import { NoteModel } from '../../../models';
+import { delayUtil } from '../../../utilities';
+import { createNote, deleteNote, getCategoriesData, getNotesData, updateNote } from '../services/notes.service.ts';
 
 interface NotesProviderProps {
   children: ReactNode;
@@ -56,14 +50,13 @@ export const NotesProvider = ({ children }: NotesProviderProps) => {
     try {
       setLoading(true);
       const categoriesFetched = await getCategoriesData();
-      console.log('Categories fetched:', categoriesFetched);
       setCategories(categoriesFetched);
 
       if (!session) throw new Error('No session');
       const notesFetched = await getNotesData(session.token);
-      console.log('Notes fetched:', notesFetched);
       setNotes(notesFetched);
 
+      // force delay to see loading component
       await delayUtil(500);
     } catch (e) {
       setErrorMessage(e);

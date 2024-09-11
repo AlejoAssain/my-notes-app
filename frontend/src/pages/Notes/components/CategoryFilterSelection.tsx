@@ -1,5 +1,5 @@
-import { capitalizeFirstLetterUtil } from '#utilities/capitalize-first-letter.util.ts';
-import { useNotes } from '../contexts/NotesContext';
+import { capitalizeFirstLetterUtil } from '../../../utilities';
+import { useNotes } from '../contexts';
 
 type Props = {
   label: string;

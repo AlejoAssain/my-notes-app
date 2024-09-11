@@ -1,10 +1,9 @@
-import { capitalizeFirstLetterUtil } from '#utilities/index.ts'
-
-import { NoteCategoriesContainer, NoteCategoryContainer} from '#notes/components/styled-components/index.ts';
+import { capitalizeFirstLetterUtil } from '../../../utilities';
+import { NoteCategoriesContainer, NoteCategoryContainer } from './styled-components';
 
 type Props = {
   categories: string[]
-}
+};
 
 export const NoteCategories = ({categories}: Props) => {
   return (

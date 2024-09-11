@@ -1,18 +1,15 @@
 import { Form, Formik, FormikHelpers } from 'formik';
 import { useState } from 'react';
 
-import { FormNoteState } from '#notes/enums/index.ts';
-import { NoteModel } from '#models/index.ts';
-import { useNotes } from '#notes/contexts/NotesContext.tsx';
-import {
-  SelectFormField,
-  SubmitButton,
-  TextFormField,
-  RemoveButton,
-} from '#components/index.ts';
-import { noteFormValidationSchema } from '#notes/validation-schema/index.ts';
-import { EditNoteFormFooter } from '#notes/components/styled-components/index.ts';
-import { capitalizeFirstLetterUtil } from '#utilities/index.js';
+import { SelectFormField, TextFormField } from '../../../components';
+import { Button } from '../../../components/Button';
+import { TrashIcon } from '../../../components/Icons';
+import { NoteModel } from '../../../models';
+import { capitalizeFirstLetterUtil } from '../../../utilities';
+import { useNotes } from '../contexts';
+import { FormNoteState } from '../enums';
+import { noteFormValidationSchema } from '../validation-schema';
+import { EditNoteFormFooter } from './styled-components';
 
 type Props = {
   note: NoteModel;
@@ -79,7 +76,7 @@ export const EditNoteForm = ({ note, toggleEdit }: Props) => {
           fieldName={'state'}
           options={[
             { label: 'Archived', value: FormNoteState.Archived },
-            { label: 'Active', value: FormNoteState.Active },
+            { label: 'Active', value: FormNoteState.Active }
           ]}
         />
         {categories.map((category) => (
@@ -93,8 +90,10 @@ export const EditNoteForm = ({ note, toggleEdit }: Props) => {
           </div>
         ))}
         <EditNoteFormFooter>
-          <SubmitButton text={'Update note'} />
-          <RemoveButton removeItem={handleRemove} />
+          <Button type='submit'>Update note</Button>
+          <Button color='warning' onClick={() => handleRemove()}>
+            <TrashIcon />
+          </Button>
         </EditNoteFormFooter>
       </Form>
     </Formik>

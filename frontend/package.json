@@ -1,19 +1,8 @@
 {
-  "name": "notes-challenge-app",
+  "name": "my-notes-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
-  "imports": {
-    "#/*": "./src/*",
-    "#components/*": "./src/components/*",
-    "#services/*": "./src/services/*",
-    "#models/*": "./src/models/*",
-    "#adapters/*": "./src/adapters/*",
-    "#pages/*": "./src/pages/*",
-    "#contexts/*": "./src/contexts/*",
-    "#utilities/*": "./src/utilities/*",
-    "#notes/*": "./src/pages/Notes/*"
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -21,10 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@types/js-cookie": "^3.0.6",
     "axios": "^1.7.7",
     "formik": "^2.4.6",
-    "framer-motion": "^11.5.4",
     "js-cookie": "^3.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -38,6 +25,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/styled-components": "^5.1.34",
+    "@types/js-cookie": "^3.0.6",
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",

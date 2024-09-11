@@ -1,17 +1,13 @@
 import { useState } from 'react';
 
-import {
-  Note,
-  NewNoteForm,
-  AddNoteButton,
-  NotesWrapper,
-  ControlButtonsContainer,
-  FiltersContainer,
-} from '#notes/components/index.ts';
-import { useNotes } from '#notes/contexts/NotesContext.tsx';
-import { StatusFilterSelection } from './StatusFilterSelection';
-import { CategoryFilterSelection } from './CategoryFilterSelection';
-import { Loading, Modal } from '#components/index.ts';
+import { Loading, Modal } from '../../../components';
+import { Button } from '../../../components/Button';
+import { useNotes } from '../contexts';
+import { CategoryFilterSelection } from './CategoryFilterSelection.tsx';
+import { NewNoteForm } from './NewNoteForm.tsx';
+import { Note } from './Note.tsx';
+import { StatusFilterSelection } from './StatusFilterSelection.tsx';
+import { ControlButtonsContainer, FiltersContainer, NotesWrapper } from './styled-components';
 
 export type NoteStatusFilter = 'all' | 'active' | 'archived';
 
@@ -62,10 +58,9 @@ export const Notes = () => {
             changeCategoryFilter={changeCategoryFilter}
           />
         </FiltersContainer>
-        <AddNoteButton
-          toggleHidden={() => setFormHidden(!formHidden)}
-          formHidden={formHidden}
-        />
+        <Button onClick={() => setFormHidden(!formHidden)} >
+          { formHidden ? 'Add note' : 'Cancel'}
+        </Button>
       </ControlButtonsContainer>
       {!formHidden ? (
         <Modal isOpen={!formHidden} close={() => setFormHidden(true)}>

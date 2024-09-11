@@ -1,4 +1,4 @@
-import {NoteStateContainer} from '#notes/components/styled-components/index.ts';
+import { NoteStateContainer } from './styled-components';
 
 type Props = {
   active: boolean;

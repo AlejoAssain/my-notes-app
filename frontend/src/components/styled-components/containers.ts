@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const ButtonContainer = styled.a`
-  cursor: pointer;
-`
-
 export const ModalContainer = styled.div`
   position: fixed;
   top: 0;
@@ -26,30 +22,4 @@ export const ModalWrapper = styled.div`
   background-color: ${({theme}) => theme.colors.lighterBackground};
   padding: 10px;
   border-radius: 20px;
-`
-
-export const NavbarContainer = styled.div`
-  background-color: ${({theme}) => theme.colors.lighterBackground};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  font-size: 20px;
-  font-weight: bolder;
-  user-select: none;
-  margin-bottom: 30px;
-  
-  svg {
-    margin-left: 10px;
-  }
-`
-
-export const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: center;
-`
-
-export const LogoutButton = styled.button`
 `

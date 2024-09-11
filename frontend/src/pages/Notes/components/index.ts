@@ -1,6 +1,4 @@
-export * from './AddNoteButton';
 export * from './CategoryFilterSelection';
-export * from './EditNoteButton';
 export * from './EditNoteForm';
 export * from './NewNoteForm';
 export * from './Note';

@@ -1,7 +1,6 @@
 import { AxiosResponse } from 'axios';
 
-import { SessionModel } from '#models/session.model.ts';
-import { UserModel } from '#models/user.model.ts';
+import { SessionModel, UserModel } from '../models';
 import { generateHeader, apiClientService } from './api-client.service';
 
 export const getCurrentUser = async (token: string): Promise<UserModel> => {

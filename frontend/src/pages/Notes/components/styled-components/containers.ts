@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const ControlButtonsContainer = styled.div`
@@ -42,7 +41,7 @@ export const NoteStateContainer = styled.a<{ $active: boolean }>`
   background-color: ${({ $active, theme }) =>
     $active ? theme.colors.stateActive : theme.colors.stateArchived};
   color: ${({ theme }) => theme.colors.secondaryText };
-  padding: 0px 5px;
+  padding: 0 5px;
 `;
 
 export const NoteHeaderContainer = styled.div`
@@ -55,10 +54,6 @@ export const NoteHeaderContainer = styled.div`
   margin-bottom: 10px;
 `;
 
-export const NoteButtonContainer = styled(motion.a)`
-  cursor: pointer;
-`;
-
 export const EditNoteFormFooter = styled.div`
   display: flex;
   flex-direction: row;
@@ -68,10 +63,6 @@ export const EditNoteFormFooter = styled.div`
   a {
     margin: 0px 5px;
   }
-`;
-
-export const AddNoteButtonContainer = styled.a`
-  cursor: pointer;
 `;
 
 export const NoteCategoriesContainer = styled.div`
@@ -96,9 +87,9 @@ export const NewNoteFormContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
   form {
-    padding: 0 20px;
-    padding-bottom: 20px;
+    padding: 0 20px 20px;
   }
 `;
 export const FiltersContainer = styled.div`
@@ -108,20 +99,4 @@ export const FiltersContainer = styled.div`
   div {
     margin: 0 20px;
   }
-`;
-
-export const AddButtonContainer = styled(motion.div)<{ $formHidden: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: ${(props) =>
-    props.$formHidden
-      ? props.theme.colors.tertiary
-      : props.theme.colors.warning};
-  color: ${({theme}) => theme.colors.text};
-  padding: 5px 10px;
-  font-weight: bold;
-  border-radius: 10px;
-  cursor: pointer;
 `;

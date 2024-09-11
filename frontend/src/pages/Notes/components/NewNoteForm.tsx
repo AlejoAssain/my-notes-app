@@ -1,16 +1,12 @@
 import { useState } from 'react';
 import { Form, Formik, FormikHelpers } from 'formik';
 
-import {
-  SelectFormField,
-  SubmitButton,
-  TextFormField,
-  FormTitle
-} from '#components/index.ts';
-import { useNotes } from '#notes/contexts/NotesContext.tsx';
-import { FormNoteState } from '#notes/enums/index.ts';
-import { noteFormValidationSchema } from '#notes/validation-schema/index.ts';
-import { capitalizeFirstLetterUtil } from '#utilities/index.ts';
+import { FormTitle, SelectFormField, TextFormField } from '../../../components';
+import { Button } from '../../../components/Button';
+import { capitalizeFirstLetterUtil } from '../../../utilities';
+import { useNotes } from '../contexts';
+import { FormNoteState } from '../enums';
+import { noteFormValidationSchema } from '../validation-schema';
 import { NewNoteFormContainer } from './styled-components';
 
 type Props = {
@@ -79,7 +75,7 @@ export const NewNoteForm = ({closeForm}: Props) => {
               <input type="checkbox" onChange={() => handleCheckboxChange(category)} />
             </div>
           ))}  
-          <SubmitButton text={'Create'} />
+          <Button type='submit' >Create</Button>
         </Form>
       </Formik>
     </NewNoteFormContainer>

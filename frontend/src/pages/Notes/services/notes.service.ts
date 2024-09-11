@@ -1,8 +1,8 @@
 import { AxiosResponse } from 'axios';
 
-import { ApiNoteModel, NoteModel } from '#models/index.ts';
-import { apiClientService, generateHeader } from '#services/api-client.service.ts';
-import { noteAdapter } from '#adapters/index.ts';
+import { noteAdapter } from '../../../adapters';
+import { ApiNoteModel, NoteModel } from '../../../models';
+import { apiClientService, generateHeader } from '../../../services/api-client.service.ts';
 
 interface GetCategoriesResponse {
   categories: string[];
@@ -19,9 +19,7 @@ export const getNotesData = async (token: string): Promise<NoteModel[]> => {
   const response: AxiosResponse<ApiNoteModel[]> =
     await apiClientService.get('/notes', generateHeader(token));
   
-  const data = response.data.map((note) => noteAdapter(note));
-  console.log(data);
-  return data
+  return response.data.map((note) => noteAdapter(note));
 };
 
 interface CreateNoteRequestBody {

@@ -1,4 +1,4 @@
-import { ApiNoteModel, NoteModel } from '#models/index.ts';
+import { ApiNoteModel, NoteModel } from '../models';
 
 export const noteAdapter = (apiNote: ApiNoteModel): NoteModel => {
   return {

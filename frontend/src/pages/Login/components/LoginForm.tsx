@@ -1,9 +1,9 @@
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 
-import { useSession } from '#contexts/SessionContext.tsx';
 import { LoginFormFieldContainer } from './styled-components';
-import { SubmitButton } from '#components/SubmitButton.js';
+import { useSession } from '../../../contexts';
+import { Button } from '../../../components/Button';
 
 interface FormValues {
   username: string;
@@ -49,7 +49,7 @@ export const LoginForm = () => {
           <Field type="password" id="password" name="password" />
           <ErrorMessage name="password" component="div" />
         </LoginFormFieldContainer>
-        <SubmitButton text='Log In' />
+        <Button type='submit'>Log in</Button>
       </Form>
     </Formik>
   );
