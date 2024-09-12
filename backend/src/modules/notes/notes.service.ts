@@ -75,7 +75,7 @@ export class NotesService {
     const user = await this.usersService.getUserByUsername(username);
     const notes = await this.noteRepository.find({
       relations: ['categories', 'user'],
-      where: { user: user }
+      where: { user: user },
     });
     return notes.map((n) => this.filterNote(n));
   }

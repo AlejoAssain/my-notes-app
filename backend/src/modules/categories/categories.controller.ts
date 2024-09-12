@@ -1,15 +1,21 @@
 import { Controller, Get } from '@nestjs/common';
 
 import { CategoriesService } from './categories.service';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { CategoriesResponseDto } from './dto';
 
-@ApiTags('categories')
+@ApiTags('Categories')
 @Controller('categories')
 export class CategoriesController {
   constructor(private readonly categoriesService: CategoriesService) {}
 
-  @ApiOperation({ summary: 'Get categories' })
   @Get()
+  @ApiOperation({ summary: 'Get categories' })
+  @ApiResponse({
+    status: 200,
+    description: 'Get all categories',
+    type: CategoriesResponseDto,
+  })
   findAll() {
     return this.categoriesService.findAll();
   }

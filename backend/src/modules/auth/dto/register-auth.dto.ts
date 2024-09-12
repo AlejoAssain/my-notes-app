@@ -8,5 +8,5 @@ export class RegisterAuthDto {
   username: string;
 
   @IsString()
-  password: string
+  password: string;
 }

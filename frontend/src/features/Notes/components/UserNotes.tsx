@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
-import { Loading, Modal } from '../../../components';
 import { Button } from '../../../components/Button';
+import { Loading } from '../../../components/Loading';
+import { Modal } from '../../../components/Modal';
 import { useNotes } from '../contexts';
 import { CategoryFilterSelection } from './CategoryFilterSelection.tsx';
 import { NewNoteForm } from './NewNoteForm.tsx';

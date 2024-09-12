@@ -18,11 +18,13 @@ export class CategoriesService implements OnApplicationBootstrap {
   }
 
   filterCategories(categories: Category[]) {
-    return categories.map(c => c.name)
+    return categories.map((c) => c.name);
   }
 
   async findAll() {
-    return { categories: this.filterCategories(await this.categoryRepository.find()) };
+    return {
+      categories: this.filterCategories(await this.categoryRepository.find()),
+    };
   }
 
   async findCategoryByName(categoryName: string) {

@@ -1,4 +1,4 @@
-import { IsArray, IsBoolean, IsOptional, IsString } from "class-validator";
+import { IsArray, IsBoolean, IsOptional, IsString } from 'class-validator';
 
 export class UpdateNoteDto {
   @IsOptional()
@@ -7,11 +7,10 @@ export class UpdateNoteDto {
 
   @IsOptional()
   @IsArray()
-  @IsString({each: true})
+  @IsString({ each: true })
   categories: string[];
 
   @IsOptional()
   @IsBoolean()
   active: boolean;
-  
 }

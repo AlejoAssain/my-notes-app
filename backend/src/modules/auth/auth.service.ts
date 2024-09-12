@@ -9,14 +9,13 @@ import { JwtService } from '@nestjs/jwt';
 import { LoginAuthDto, RegisterAuthDto } from './dto';
 import { UsersService } from '../users/users.service';
 
-
 @Injectable()
 export class AuthService implements OnApplicationBootstrap {
   salt: number;
 
   constructor(
     private readonly usersService: UsersService,
-    private readonly jwtService: JwtService
+    private readonly jwtService: JwtService,
   ) {
     this.salt = 10;
   }
@@ -26,7 +25,7 @@ export class AuthService implements OnApplicationBootstrap {
   }
 
   generateToken(username) {
-    const payload = {username: username};
+    const payload = { username: username };
     return this.jwtService.sign(payload);
   }
 
@@ -45,8 +44,8 @@ export class AuthService implements OnApplicationBootstrap {
 
     return {
       user: this.usersService.filterUser(createdUser),
-      token: jwtToken
-    }
+      token: jwtToken,
+    };
   }
 
   async registerTestUser() {
@@ -65,7 +64,7 @@ export class AuthService implements OnApplicationBootstrap {
 
   async loginUser(loginAuthDto: LoginAuthDto) {
     const user = await this.usersService.getUserByUsername(
-      loginAuthDto.username
+      loginAuthDto.username,
     );
     const passwordCheck = await compare(loginAuthDto.password, user.password);
 
@@ -75,7 +74,7 @@ export class AuthService implements OnApplicationBootstrap {
 
     return {
       user: this.usersService.filterUser(user),
-      token: jwtToken
+      token: jwtToken,
     };
   }
 

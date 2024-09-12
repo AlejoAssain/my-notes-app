@@ -2,10 +2,11 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 import './App.css';
+import { Loading } from './components/Loading';
+import { Navbar } from './components/Navbar';
 import { defaultTheme } from './themes';
 import { NotesPage, LoginPage } from './pages';
 import { useSession } from './contexts';
-import { Loading, Navbar } from './components';
 
 // TODO - create reusable form components
 // TODO - pass create and edit note form to reusable form

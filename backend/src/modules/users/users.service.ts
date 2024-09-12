@@ -16,8 +16,8 @@ export class UsersService {
   filterUser(user: User) {
     return {
       username: user.username,
-      name: user.name
-    }
+      name: user.name,
+    };
   }
 
   async create(createUserDto: CreateUserDto) {
@@ -38,15 +38,15 @@ export class UsersService {
   }
 
   async userExists(username: string) {
-    const user = await this.userRepository.findOneBy({username: username});
+    const user = await this.userRepository.findOneBy({ username: username });
     return user ? true : false;
   }
 
   async getUserByUsername(username: string) {
-    const user = await this.userRepository.findOneBy({username});
+    const user = await this.userRepository.findOneBy({ username });
 
     if (!user) throw new UserNotFoundException(username);
-    
+
     return user;
   }
 }

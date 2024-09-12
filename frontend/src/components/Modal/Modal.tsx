@@ -1,5 +1,5 @@
-import { Button } from './Button';
-import { ModalContainer, ModalWrapper } from './styled-components';
+import { Button } from '../Button';
+import { ModalContainer, ModalWrapper } from './Modal.styles.ts';
 
 type Props = {
   isOpen: boolean;
