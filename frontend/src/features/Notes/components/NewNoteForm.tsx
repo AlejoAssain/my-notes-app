@@ -75,7 +75,7 @@ export const NewNoteForm = ({closeForm}: Props) => {
               <input type="checkbox" onChange={() => handleCheckboxChange(category)} />
             </div>
           ))}  
-          <Button type='submit' >Create</Button>
+          <Button type='submit' fontSize='small' >Create</Button>
         </Form>
       </Formik>
     </NewNoteFormContainer>

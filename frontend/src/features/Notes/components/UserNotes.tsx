@@ -59,7 +59,7 @@ export const UserNotes = () => {
             changeCategoryFilter={changeCategoryFilter}
           />
         </FiltersContainer>
-        <Button onClick={() => setFormHidden(!formHidden)} >
+        <Button onClick={() => setFormHidden(!formHidden)} fontSize='small' >
           { formHidden ? 'Add note' : 'Cancel'}
         </Button>
       </ControlButtonsContainer>

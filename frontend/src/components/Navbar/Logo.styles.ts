@@ -5,7 +5,7 @@ export const LogoContainer = styled.div`
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSizes.normal};
   font-weight: bolder;
   cursor: pointer;
 `

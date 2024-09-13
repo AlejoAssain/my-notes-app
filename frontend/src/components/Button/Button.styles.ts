@@ -15,8 +15,10 @@ export const ButtonContainer = styled.button<Props>`
   justify-content: center;
   padding: 0.5rem 0.5rem;
   border: none;
-  font-size: ${({ theme }) => theme.fontSizes.small};
-  font-weight: 500;
+  font-size: ${(props) => {
+    if (props.fontSize) return props.theme.fontSizes[props.fontSize];
+    return props.theme.fontSizes.normal;
+  }};
   cursor: pointer;
   transition: box-shadow 0.3s ease;
   

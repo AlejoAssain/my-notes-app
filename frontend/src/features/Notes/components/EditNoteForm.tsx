@@ -90,8 +90,8 @@ export const EditNoteForm = ({ note, toggleEdit }: Props) => {
           </div>
         ))}
         <EditNoteFormFooter>
-          <Button type='submit'>Update note</Button>
-          <Button color='warning' onClick={() => handleRemove()}>
+          <Button type='submit' fontSize='small' >Update note</Button>
+          <Button color='warning' fontSize='small' onClick={() => handleRemove()}>
             <TrashIcon />
           </Button>
         </EditNoteFormFooter>

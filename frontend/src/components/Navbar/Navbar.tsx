@@ -10,7 +10,7 @@ export const Navbar = () => {
     <NavbarContainer>
       <Logo />
       { session ? 
-        <Button color='warning' onClick={() => logoutUser()}>
+        <Button color='warning' fontSize='small' onClick={() => logoutUser()}>
           Logout
         </Button>
         : null

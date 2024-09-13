@@ -5,11 +5,12 @@ export const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 0 20px;
+  min-height: 60px;
   user-select: none;
   margin-bottom: 30px;
   
   svg {
     margin-left: 10px;
   }
-`
+`;
