@@ -5,6 +5,6 @@ export const noteAdapter = (apiNote: ApiNoteModel): NoteModel => {
     id: apiNote.id,
     content: apiNote.content,
     active: apiNote.active,
-    categories: apiNote.categories
+    categories: apiNote.categories,
   };
 };

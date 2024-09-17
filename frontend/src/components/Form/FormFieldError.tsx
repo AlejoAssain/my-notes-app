@@ -10,7 +10,7 @@ interface Props {
 export const FormFieldError: React.FC<Props> = (props) => {
   return (
     <FormFieldErrorContainer>
-      <ErrorMessage name={props.fieldName} component='div'/>
+      <ErrorMessage name={props.fieldName} component="div" />
     </FormFieldErrorContainer>
   );
 };

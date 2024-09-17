@@ -12,14 +12,14 @@ export const ModalContainer = styled.div`
   align-items: center;
   backdrop-filter: blur(8px);
   z-index: 500;
-`
+`;
 
 export const ModalWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-color: ${({theme}) => theme.colors.lighterBackground};
+  background-color: ${({ theme }) => theme.colors.lighterBackground};
   padding: 10px;
   border-radius: 20px;
-`
+`;

@@ -6,7 +6,7 @@ import { generateHeader, apiClientService } from './api-client.service';
 export const getCurrentUser = async (token: string): Promise<UserModel> => {
   const response: AxiosResponse<UserModel> = await apiClientService.get(
     '/auth/me',
-    generateHeader(token)
+    generateHeader(token),
   );
 
   return response.data;

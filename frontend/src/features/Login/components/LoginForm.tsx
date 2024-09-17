@@ -24,23 +24,28 @@ const validationSchema = Yup.object({
 
 export const LoginForm = () => {
   const { loginUser } = useSession();
-  
+
   const handleSubmit = (
     values: FormValues,
-    actions: FormikHelpers<FormValues>
+    actions: FormikHelpers<FormValues>,
   ) => {
     loginUser(values.username, values.password);
     actions.resetForm();
   };
   return (
     <Form
-      title='Login!'
+      title="Login!"
       initialValues={initialValues}
       yupValidationSchema={validationSchema}
       handleSubmit={handleSubmit}
     >
-      <FormTextField label='Username:' fieldName='username' fontSize='normal'/>
-      <FormTextField label='Password:' fieldName='password' type='password' fontSize='normal'/>
+      <FormTextField label="Username:" fieldName="username" fontSize="normal" />
+      <FormTextField
+        label="Password:"
+        fieldName="password"
+        type="password"
+        fontSize="normal"
+      />
       <Button type="submit">Log in</Button>
     </Form>
   );

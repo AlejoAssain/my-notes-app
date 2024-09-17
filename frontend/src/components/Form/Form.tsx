@@ -14,14 +14,13 @@ interface Props<T extends object> extends React.HTMLAttributes<HTMLDivElement> {
 export const Form = <T extends object>(props: Props<T>) => {
   return (
     <FormContainer>
-      { props.title ? <FormTitle>{props.title}</FormTitle> : null }
+      {props.title ? <FormTitle>{props.title}</FormTitle> : null}
       <Formik
         initialValues={props.initialValues}
         validationSchema={props.yupValidationSchema}
-        onSubmit={props.handleSubmit}>
-        <FormikForm>
-          {props.children}
-        </FormikForm>
+        onSubmit={props.handleSubmit}
+      >
+        <FormikForm>{props.children}</FormikForm>
       </Formik>
     </FormContainer>
   );

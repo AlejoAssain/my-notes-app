@@ -7,7 +7,8 @@ export const Logo = () => {
   const navigate = useNavigate();
 
   return (
-    <LogoContainer onClick={() => navigate('/')}>
+    // reload page onClick
+    <LogoContainer onClick={() => navigate(0)}>
       Notes App
       <FaNoteSticky size="25px" />
     </LogoContainer>

@@ -11,7 +11,7 @@ export const Modal = ({ isOpen, close, children }: Props) => {
   return !isOpen ? null : (
     <ModalContainer>
       <ModalWrapper>
-        <Button color='warning' onClick={() => close()}>
+        <Button color="warning" onClick={() => close()}>
           &times;
         </Button>
         {children}

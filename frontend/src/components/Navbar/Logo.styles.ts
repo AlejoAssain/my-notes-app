@@ -8,4 +8,4 @@ export const LogoContainer = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.normal};
   font-weight: bolder;
   cursor: pointer;
-`
+`;

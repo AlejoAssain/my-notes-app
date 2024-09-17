@@ -9,7 +9,13 @@ import {
 import { useSession } from '../../../contexts';
 import { NoteModel } from '../../../models';
 import { delayUtil } from '../../../utilities';
-import { createNote, deleteNote, getCategoriesData, getNotesData, updateNote } from '../services/notes.service.ts';
+import {
+  createNote,
+  deleteNote,
+  getCategoriesData,
+  getNotesData,
+  updateNote,
+} from '../services/notes.service.ts';
 
 interface NotesProviderProps {
   children: ReactNode;
@@ -22,7 +28,7 @@ interface NewNoteModel {
 }
 
 interface INotesContext {
-  categories: string[],
+  categories: string[];
   notes: NoteModel[];
   getNotes: () => Promise<void>;
   addNote: (newNote: NewNoteModel) => void;

@@ -1,9 +1,10 @@
 import { Field } from 'formik';
 import React from 'react';
-import { FontSize } from '../../themes';
-import { FormFieldError } from './FormFieldError.tsx';
 
-import { FormTextFieldContainer, FormTextFieldInput, FormTextFieldLabel } from './FormTextField.styles.ts';
+import { FontSize } from '../../themes';
+import { FormFieldContainer, FormFieldLabel } from './Form.styles.ts';
+import { FormFieldError } from './FormFieldError.tsx';
+import { FormTextFieldInput } from './FormTextField.styles.ts';
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -11,23 +12,22 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   fieldName: string;
 }
 
-export const FormTextField: React.FC<Props> = (
-  {label, fieldName, fontSize, ...props}: Props
-) => {
+export const FormTextField: React.FC<Props> = ({
+  label,
+  fieldName,
+  fontSize,
+  ...props
+}: Props) => {
   return (
-    <FormTextFieldContainer>
-      <FormTextFieldLabel
-        fontSize={fontSize}
-      >
-        {label}
-      </FormTextFieldLabel>
+    <FormFieldContainer>
+      <FormFieldLabel fontSize={fontSize}>{label}</FormFieldLabel>
       <Field
         as={FormTextFieldInput}
         name={fieldName}
         fontSize={fontSize}
         {...props}
       />
-      <FormFieldError fieldName={fieldName}/>
-    </FormTextFieldContainer>
+      <FormFieldError fieldName={fieldName} />
+    </FormFieldContainer>
   );
 };

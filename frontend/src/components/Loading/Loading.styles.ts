@@ -8,7 +8,7 @@ const rotateKeyframe = keyframes`
   to {
     transform: rotate(360deg);
   }
-`
+`;
 
 export const LoadingContainer = styled.div`
   display: flex;

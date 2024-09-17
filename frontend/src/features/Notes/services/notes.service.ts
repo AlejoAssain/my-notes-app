@@ -2,7 +2,10 @@ import { AxiosResponse } from 'axios';
 
 import { noteAdapter } from '../../../adapters';
 import { ApiNoteModel, NoteModel } from '../../../models';
-import { apiClientService, generateHeader } from '../../../services/api-client.service.ts';
+import {
+  apiClientService,
+  generateHeader,
+} from '../../../services/api-client.service.ts';
 
 interface GetCategoriesResponse {
   categories: string[];
@@ -14,11 +17,12 @@ export const getCategoriesData = async (): Promise<string[]> => {
   return response.data.categories;
 };
 
-
 export const getNotesData = async (token: string): Promise<NoteModel[]> => {
-  const response: AxiosResponse<ApiNoteModel[]> =
-    await apiClientService.get('/notes', generateHeader(token));
-  
+  const response: AxiosResponse<ApiNoteModel[]> = await apiClientService.get(
+    '/notes',
+    generateHeader(token),
+  );
+
   return response.data.map((note) => noteAdapter(note));
 };
 
@@ -30,12 +34,12 @@ interface CreateNoteRequestBody {
 
 export const createNote = async (
   newNoteData: CreateNoteRequestBody,
-  token: string
+  token: string,
 ): Promise<NoteModel> => {
   const response: AxiosResponse<ApiNoteModel> = await apiClientService.post(
     '/notes',
     newNoteData,
-    generateHeader(token)
+    generateHeader(token),
   );
 
   return noteAdapter(response.data);
@@ -43,25 +47,31 @@ export const createNote = async (
 
 type UpdateNoteRequestBody = Partial<CreateNoteRequestBody>;
 
-export const updateNote = async (editedNote: NoteModel, token: string): Promise<NoteModel> => {
+export const updateNote = async (
+  editedNote: NoteModel,
+  token: string,
+): Promise<NoteModel> => {
   const requestBody: UpdateNoteRequestBody = {
     content: editedNote.content,
     active: editedNote.active,
-    categories: editedNote.categories
+    categories: editedNote.categories,
   };
   const response: AxiosResponse<ApiNoteModel> = await apiClientService.patch(
     `/notes/${editedNote.id}`,
     requestBody,
-    generateHeader(token)
+    generateHeader(token),
   );
 
   return noteAdapter(response.data);
 };
 
-export const deleteNote = async (noteId: number, token: string): Promise<NoteModel> => {
+export const deleteNote = async (
+  noteId: number,
+  token: string,
+): Promise<NoteModel> => {
   const response: AxiosResponse<ApiNoteModel> = await apiClientService.delete(
     `/notes/${noteId}`,
-    generateHeader(token)
+    generateHeader(token),
   );
 
   return noteAdapter(response.data);

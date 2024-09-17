@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-import { Button } from '../../../components/Button';
-import { EditIcon } from '../../../components/Icons';
-import { NoteModel } from '../../../models';
-import { EditNoteForm } from './EditNoteForm.tsx';
-import { NoteCategories } from './NoteCategories.tsx';
-import { NoteState } from './NoteState.tsx';
-import { NoteContainer, NoteHeaderContainer } from './styled-components';
+import { Button } from '../../../../components/Button';
+import { EditIcon } from '../../../../components/Icons';
+import { NoteModel } from '../../../../models';
+import { EditNoteForm } from '../EditNoteForm';
+import { NoteCategories } from './NoteCategories';
+import { NoteState } from './NoteState';
+import { NoteContainer, NoteHeaderContainer } from './Note.styles';
 
 type Props = {
   note: NoteModel;

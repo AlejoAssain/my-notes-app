@@ -11,9 +11,7 @@ export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button: React.FC<Props> = ({ children, ...props }) => {
   return (
     <ButtonContainer {...props}>
-      <ButtonTextContainer>
-        {children}
-      </ButtonTextContainer>
+      <ButtonTextContainer>{children}</ButtonTextContainer>
     </ButtonContainer>
   );
 };

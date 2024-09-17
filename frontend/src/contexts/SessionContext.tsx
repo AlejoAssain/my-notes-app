@@ -11,7 +11,6 @@ import axios from 'axios';
 import { SessionModel } from '../models';
 import { getCurrentUser, login } from '../services/auth.service.ts';
 
-
 interface SessionProviderProps {
   children: ReactNode;
 }
@@ -68,7 +67,7 @@ export const SessionProvider = ({ children }: SessionProviderProps) => {
   const logoutUser = () => {
     removeTokenCookie();
     setSession(null);
-    setError(null)
+    setError(null);
   };
 
   const getSessionFromCookie = async () => {
@@ -77,7 +76,7 @@ export const SessionProvider = ({ children }: SessionProviderProps) => {
 
     if (token) {
       try {
-        const user = await getCurrentUser(token)
+        const user = await getCurrentUser(token);
         setSession({
           token: token,
           user: user,

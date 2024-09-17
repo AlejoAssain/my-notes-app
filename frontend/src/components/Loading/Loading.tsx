@@ -8,5 +8,5 @@ export const Loading = () => {
         <LoadingIcon />
       </RotatingDiv>
     </LoadingContainer>
-  )
+  );
 };
