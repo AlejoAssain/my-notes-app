@@ -6,7 +6,7 @@ import { Loading } from './components/Loading';
 import { Navbar } from './components/Navbar';
 import { defaultTheme } from './themes';
 import { NotesPage, LoginPage } from './pages';
-import { useSession } from './contexts';
+import { useSession } from './providers';
 
 function App() {
   const { session, loading } = useSession();

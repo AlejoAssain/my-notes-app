@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button } from '../../../../components/Button';
 import { Loading } from '../../../../components/Loading';
 import { Modal } from '../../../../components/Modal';
-import { useFilters, useNotes } from '../../contexts';
+import { useFilters, useNotes } from '../../providers';
 import { Filters } from '../Filters';
 import { NewNoteForm } from '../NewNoteForm';
 import { Note } from '../Note';

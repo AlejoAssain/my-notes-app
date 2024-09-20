@@ -6,9 +6,8 @@ import {
   useState,
 } from 'react';
 
-import { useSession } from '../../../contexts';
+import { useSession } from '../../../providers';
 import { NoteModel } from '../../../models';
-import { delayUtil } from '../../../utilities';
 import {
   createNote,
   deleteNote,
@@ -52,6 +51,8 @@ export const NotesProvider = ({ children }: NotesProviderProps) => {
     setError(e instanceof Error ? e.message : 'Unknown error occurred!');
   };
 
+  // TODO - implement template method
+
   const getNotes = async () => {
     try {
       setLoading(true);
@@ -62,8 +63,6 @@ export const NotesProvider = ({ children }: NotesProviderProps) => {
       const notesFetched = await getNotesData(session.token);
       setNotes(notesFetched);
 
-      // force delay to see loading component
-      await delayUtil(500);
     } catch (e) {
       setErrorMessage(e);
     } finally {

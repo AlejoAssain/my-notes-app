@@ -1,4 +1,4 @@
-import { useSession } from '../../contexts';
+import { useSession } from '../../providers';
 import { Button } from '../Button';
 import { Logo } from './Logo.tsx';
 import { NavbarContainer } from './Navbar.styles';

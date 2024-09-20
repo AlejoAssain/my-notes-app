@@ -9,7 +9,7 @@ import {
   FormTextField,
 } from '../../../../components/Form';
 import { capitalizeFirstLetterUtil } from '../../../../utilities';
-import { useNotes } from '../../contexts';
+import { useNotes } from '../../providers';
 import { FormNoteState } from '../../enums';
 import { noteFormValidationSchema } from '../../validation-schema';
 

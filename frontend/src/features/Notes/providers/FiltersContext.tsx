@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
 
 import { NoteModel } from '../../../models';
-import { NoteStatusFilter } from '../enums/note-state.enum.ts';
+import { NoteStatusFilter } from '../enums';
 
 interface FiltersProviderProps {
   children: ReactNode;

@@ -1,6 +1,6 @@
 import { OutsideFormSelectField } from '../../../../components/Form';
 import { capitalizeFirstLetterUtil } from '../../../../utilities';
-import { useFilters, useNotes } from '../../contexts';
+import { useFilters, useNotes } from '../../providers';
 import { NoteStatusFilter } from '../../enums';
 import { FiltersContainer } from './Filters.styles.ts';
 

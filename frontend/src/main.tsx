@@ -1,8 +1,9 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
+
 import App from './App.tsx';
 import './index.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { SessionProvider } from './contexts/SessionContext.tsx';
+import { SessionProvider } from './providers';
 
 const router = createBrowserRouter([
   {

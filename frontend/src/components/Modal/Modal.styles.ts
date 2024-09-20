@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { Button } from '../Button';
+
 export const ModalContainer = styled.div`
   position: fixed;
   top: 0;
@@ -20,6 +22,11 @@ export const ModalWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.lighterBackground};
-  padding: 10px;
+  padding: 30px;
   border-radius: 20px;
+`;
+
+export const CloseModalButton = styled(Button)`
+  padding: 5px 5px;
+  align-self: flex-end;
 `;
